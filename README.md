@@ -35,6 +35,13 @@ example properties file for a specific locale : messages.en_US.properties
 		the.default.key=default
 		the.key.with.parameters=a key with a parameter %1 and another parameter %2
 
+note: while most java property file behaviour is supported, this plugin expects both
+property files as well as HTML pages to be in utf8. this to be said as most existing
+java property files most likely will NOT be in utf-8 for historic reasons.
+
+mixing ISO encoded property files with utf-8 pages is neither supported nor recommended.
+you might get away with everything in ISO if all your supported languages fit into
+one ISO codepage, but I would not want to try that at home.
 
 example markup
 
