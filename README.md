@@ -57,7 +57,5 @@ example markup
 	` 
 
 
-unit tests can be found here
-
-	http://littlemole.github.com/jquery.i18n/test/test.html
+unit tests can be found [here](http://littlemole.github.com/jquery.i18n/test/test.html)
 
