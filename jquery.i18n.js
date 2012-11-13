@@ -4,7 +4,7 @@ jQuery.i18n = jQuery.i18n || {};
 jQuery.i18n.defaultOptions = {
 
 		baseUrl 	: 'messages',
-		ext			: '.properties',
+		ext		: '.properties',
 		locale  	: 'en_US',
 		callback 	: function() {}
 };
