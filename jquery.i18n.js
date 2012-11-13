@@ -106,25 +106,26 @@ jQuery.i18n.loadProperties = (function($) {
 	};
 
 	// fetch a (chain of) properties. asynchronously delegates to result handler above.
-	var fetch = function(path) {
+	var fetch = function(locale) {
 
-		var p = path != "" ? "." + path : path;
+		var l = locale != "" ? "." + locale : locale;
 
 		$.ajax({
 
-			'url' 		  : $.i18n.options.baseUrl + p + $.i18n.options.ext,
+			'url' 		  : $.i18n.options.baseUrl + l + $.i18n.options.ext,
 			'type' 		  : 'GET',
 			'dataType'    : 'text',
 			'processData' : false,
 
 			success 	  : function(data,status, jqx) {
 
-				onResult( path, $.i18n.parseProperties(data) );
+				// here we finally call parseProperties() in case you're looking for
+				onResult( locale, $.i18n.parseProperties(data) );
 			},
 
 			error 		  : function(jqXHR, textStatus, errorThrown) {
 
-				onResult( path, {} );
+				onResult( locale, {} );
 			}
 		});
 	};
