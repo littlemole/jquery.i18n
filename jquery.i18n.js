@@ -1,5 +1,4 @@
 /*
-<one line to give the program's name and a brief idea of what it does.>
 jquery i18n plugin to deal with java style property files for translation
 
 Copyright (C) 2012  little.mole
