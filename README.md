@@ -24,3 +24,40 @@ usage:
 				$('#test2').i18n("value", 42);
 			});
 	});
+
+
+example properties file for a specific locale : messages.en_US.properties
+
+		#this is a comment
+		the.key=the value
+		the.other.key= another value
+		the.empty.key=
+		the.default.key=default
+		the.key.with.parameters=a key with a parameter %1 and another parameter %2
+
+
+example markup
+
+	`
+	 <body>
+	  <div>
+		<div id="test" data-i18n="the.key"></div>
+		<div id="test2" data-i18n="the.other.key"></div>
+		<div id="testParams" data-i18n="the.key.with.parameters"></div>
+		<div id="parent">
+			<h1 id="h1" data-i18n="the.default.key"></h1>
+			<p id="p" data-i18n="the.key"></p>
+			<ul>
+				<li id="li1" data-i18n="the.other.key"></li>
+				<li id="li2" data-i18n="the.other.key"></li>
+			</ul>
+		</div>
+	  </div>
+	 </body>
+	` 
+
+
+unit tests can be found here
+
+	http://littlemole.github.com/jquery.i18n/test/test.html
+
