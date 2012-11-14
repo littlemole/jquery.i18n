@@ -114,8 +114,8 @@ jQuery.i18n.loadProperties = (function($) {
 
 			'url' 		  : $.i18n.options.baseUrl + l + $.i18n.options.ext,
 			'type' 		  : 'GET',
-			'dataType'    : 'text',
-			'processData' : false,
+			'dataType'  	  : 'text',
+			'processData' 	  : false,
 
 			success 	  : function(data,status, jqx) {
 
