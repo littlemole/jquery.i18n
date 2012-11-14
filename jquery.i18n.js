@@ -1,3 +1,22 @@
+/*
+jquery i18n plugin to deal with java style property files for translation
+
+Copyright (C) 2012  little.mole
+    
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+                    
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+                                    
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/                                            
+
 
 jQuery.i18n = jQuery.i18n || {};
 
@@ -87,25 +106,26 @@ jQuery.i18n.loadProperties = (function($) {
 	};
 
 	// fetch a (chain of) properties. asynchronously delegates to result handler above.
-	var fetch = function(path) {
+	var fetch = function(locale) {
 
-		var p = path != "" ? "." + path : path;
+		var l = locale != "" ? "." + locale : locale;
 
 		$.ajax({
 
-			'url' 		  : $.i18n.options.baseUrl + p + $.i18n.options.ext,
+			'url' 		  : $.i18n.options.baseUrl + l + $.i18n.options.ext,
 			'type' 		  : 'GET',
 			'dataType'    : 'text',
 			'processData' : false,
 
 			success 	  : function(data,status, jqx) {
 
-				onResult( path, $.i18n.parseProperties(data) );
+				// here we finally call parseProperties() in case you're looking for
+				onResult( locale, $.i18n.parseProperties(data) );
 			},
 
 			error 		  : function(jqXHR, textStatus, errorThrown) {
 
-				onResult( path, {} );
+				onResult( locale, {} );
 			}
 		});
 	};
